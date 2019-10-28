@@ -1,8 +1,8 @@
 function calcTip(){
-  x = pretax.value  // read weight from element with id="weight"
-  y = taxrate.value  // read height from element with id="height"
-  tip = x*y  // calculate the Body Mass Index
-  Tip.innerHTML =    // write into label element with id "BMI"
+  x = pretax.value  // read pretax from element with id="pretax"
+  y = taxrate.value  // read taxrate from element with id="taxrate"
+  tip = x*y  // calculate the tip
+  Tip.innerHTML =    // write into label element with id "Tip"
       "Your total tip is "
-      +tip.toFixed(1)  // round BMI to 1 decimal place
+      +tip.toFixed(1)  // round Tip to 1 decimal place
 }
