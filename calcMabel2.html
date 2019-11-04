@@ -8,22 +8,36 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <script src="calcdesi.js"></script>
 
-    <title>Calculator by Desi</title>
+
+    <title>Calculator 2 by Mabel</title>
   </head>
   <body class="container">
-      <h1>Tax calculator</h1>
-      how much does it cost <input type="number" id="costs"><br>
-      Tax % <input type="number" id="tax"><br>
-
-      <button class="btn btn-lg btn-danger" onClick="calcTax()">
-          Calculate total
+      <h1>calculate the tax and tip on dinner</h1>
+      What is your full name? <input type="text" id="fullName"><br>
+      Enter pretax amount(US currency) <input type="number" id="pretax"><br>
+      tax rate <input type="number" id="taxrate"><br>
+      <button class="btn btn-lg btn-danger" onClick="calcTip()">
+          Calculate tip
       </button>
       <br>
       <hr>
       <h2>Results</h2>
-      <label id="Total">????</label>
+      <label id="Tip">????</label>
+
+      <script>
+      function calcTip(){
+        x = pretax.value  // read pretax from element with id="pretax"
+        y = taxrate.value  // read taxrate from element with id="taxrate"
+        console.log("x="+x)
+        console.log("y="+y)
+        console.log("Hi Mabel!!")
+        tip = x*y  // calculate the tip
+        Tip.innerHTML =    // write into label element with id "Tip"
+            "Your total tip is "
+            +tip.toFixed(1)  // round Tip to 1 decimal place
+      }
+      </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
