@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title> Area of Triangle Calculator</title>
+</head>
+<body>
+<h1>:)</h1>
+A: <input type="text" id="aTF"><br>
+B: <input type="text" id="bTF"><br>
+C: <input type="text" id="cTF"><br>
+<button onClick="calcAREA">
+  Calculate the area of the triangle
+</button>
+<br>
+<label id="resultLabel">
+  The area of your triangle is ???
+</label>
+
+<script>
+function calcAREA(){
+  let a = aTF.value
+  let b = bTF.value
+  let c = cTF.value
+  let s = (a+b+c)/2
+  let area = Math.sqrt(s*(s-a)*(s-b)*(s-c))
+
+  resultLabel.innerHTML =
+    "The area of your triangle is "+area
+}
+</script>
+</body>
+</html>
