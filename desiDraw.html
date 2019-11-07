@@ -17,11 +17,22 @@
         ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
         ctx.fillRect(30, 30, 50, 50);
 
-    
+
 
 
 
         ctx.fillRect(100,50,300,20);
+
+        ctx.beginPath();
+        ctx.fillStyle = 'rgba(0,0,0)';
+        ctx.arc(200,200,70,0,2*Math.PI,true)
+        ctx.stroke()
+
+
+        ctx.beginPath();
+        ctx.arc(200,200,150,0,2*Math.PI,true)
+        ctx.stroke()
+
       }
     }
   </script>
