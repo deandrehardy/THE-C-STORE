@@ -6,6 +6,7 @@
         ctx.fillStyle="black"
         drawGrid(canvas,false)
         drawGrid(canvas,true)
+
     }
 
 
