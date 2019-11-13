@@ -1,30 +1,28 @@
 <html>
 <head>
-  <title> Area of Triangle Calculator</title>
+  <title> Volume Of A Rectangular Prism </title>
 </head>
 <body>
 <h1>:)</h1>
-A: <input type="text" id="aTF"><br>
-B: <input type="text" id="bTF"><br>
-C: <input type="text" id="cTF"><br>
-<button onClick="calcAREA">
-  Calculate the area of the triangle
+Width: <input type="text" id="width"><br>
+Length: <input type="text" id="length"><br>
+Height: <input type="text" id="height"><br>
+<button onClick="calcVolume()">
+  Calculate the volume of a cube
 </button>
 <br>
 <label id="resultLabel">
-  The area of your triangle is ???
+  The volume of your cube is ???
 </label>
 
 <script>
-function calcAREA(){
-  let a = aTF.value
-  let b = bTF.value
-  let c = cTF.value
-  let s = (a+b+c)/2
-  let area = Math.sqrt(s*(s-a)*(s-b)*(s-c))
-
+function calcVolume(){
+  let w = width.value
+  let l = lenght.value
+  let h = height.value
+  let volume = w*l*h
   resultLabel.innerHTML =
-    "The area of your triangle is "+area
+    "The volume of your cube is "+volume
 }
 </script>
 </body>
