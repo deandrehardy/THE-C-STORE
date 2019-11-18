@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById('canvas');
+      if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+
+        ctx.fillstyle = 'rgb(255,230,210)';
+        ctx.fillRect(0,0,500,50);
+
+        ctx.fillstyle = 'rgb(200,0,0)';
+        ctx.fillRect(230, 49, 40, 500);
+
+        ctx.arc(100,200,50,0, Math.PI*2, true);
+        ctx.stroke();
+
+        ctx.arc(150,50,50,0 Mat.PI*2,false);
+        ctx.stroke();
+
+        for(let i=10; i<100; i+ iu)
+
+        for(let i=0; i<500; i+=50){
+          ctx.fillRect(i,0,1,500)
+        }
+
+      }
+    }
+  </script>
+ </head>
+ <body onload="draw();">
+   Demo1 <br>
+   <canvas id="canvas" width="500" height="500"></canvas>
+ </body>
+</html>
