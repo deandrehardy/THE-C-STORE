@@ -8,9 +8,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <script src="calcMabel.js"></script>
 
-    <title>Calculator by Mabel</title>
+
+    <title>Calculator 2 by Mabel</title>
   </head>
   <body class="container">
       <h1>calculate the tax and tip on dinner</h1>
@@ -24,6 +24,20 @@
       <hr>
       <h2>Results</h2>
       <label id="Tip">????</label>
+
+      <script>
+      function calcTip(){
+        x = pretax.value  // read pretax from element with id="pretax"
+        y = taxrate.value  // read taxrate from element with id="taxrate"
+        console.log("x="+x)
+        console.log("y="+y)
+        console.log("Hi Mabel!!")
+        tip = x*y  // calculate the tip
+        Tip.innerHTML =    // write into label element with id "Tip"
+            "Your total tip is "
+            +tip.toFixed(1)  // round Tip to 1 decimal place
+      }
+      </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
