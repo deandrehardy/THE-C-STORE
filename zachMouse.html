@@ -21,7 +21,7 @@
     x = event.offsetX
     y = event.offsetY
     //
-    drawObject(x,y)
+    drawObject(100,100)
   }
 
   function mouseMove(event){
@@ -30,14 +30,14 @@
     const x = event.offsetX
     const y = event.offsetY
     if (event.buttons==1){  // see if the mouse button is pressed
-      ctx.fillRect(x,y,10,30)
+      ctx.fillRect(100,100,10,30)
     }
   }
 
   function drawObject(x,y){
     // put in your own code to draw something interesting
     // at starting here ...
-    drawCircle(x,y,10)
+    drawCircle(100,100,10)
   }
 
 
@@ -46,14 +46,14 @@
   function drawCircle(x,y,r){
     // draw a circle centered at (x,y) with radius r
     ctx.beginPath();
-    ctx.arc(x,y,r,0,2*Math.PI,true)
+    ctx.arc(50,100,500,0,2*Math.PI,true)
     ctx.stroke()
   }
 
   function fillCircle(x,y,r){
     // draw a circle centered at (x,y) with radius r
     ctx.beginPath();
-    ctx.arc(x,y,r,0,2*Math.PI,true)
+    ctx.arc(50,50,50,0,2*Math.PI,true)
     ctx.fill()
   }
 
@@ -64,7 +64,7 @@
    <br>
 
    <button onclick="drawBackground()">Clear</button>
-   <button onclick="drawTim(200,200)">Draw</button>
+   <button onclick="drawZach(200,200)">Draw</button>
 
    <canvas style="float:left;margin-right:30px"
            id="canvas" width="500" height="500">
