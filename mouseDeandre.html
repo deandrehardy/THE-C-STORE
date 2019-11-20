@@ -30,7 +30,7 @@
     const x = event.offsetX
     const y = event.offsetY
     if (event.buttons==1){  // see if the mouse button is pressed
-      ctx.fillRect(x,y,10,30)
+      ctx.fillRect(x,y,10,40)
     }
   }
 
@@ -46,14 +46,14 @@
   function drawCircle(x,y,r){
     // draw a circle centered at (x,y) with radius r
     ctx.beginPath();
-    ctx.arc(x,y,r,0,2*Math.PI,true)
+    ctx.arc(x,y,r,0,4*Math.PI,true)
     ctx.stroke()
   }
 
   function fillCircle(x,y,r){
     // draw a circle centered at (x,y) with radius r
     ctx.beginPath();
-    ctx.arc(x,y,r,0,2*Math.PI,true)
+    ctx.arc(x,y,r,0,4*Math.PI,true)
     ctx.fill()
   }
 
