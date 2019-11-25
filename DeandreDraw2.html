@@ -43,54 +43,43 @@
     ctx.beginPath();
     ctx.arc(x,y,r,0,2*Math.PI,true)
     ctx.fill()
-
   }
-
-
-  function drawS(){
+  function drawDe(){
+    ctx.strokeStyle="blue"
     ctx.lineWidth=5
-    ctx.strokeStyle="red"
     ctx.beginPath()
-    ctx.moveTo(130,170)
-    ctx.lineTo(130,200)
-    ctx.moveTo(170,170)
-    ctx.lineTo(170,200)
-    ctx.moveTo(210,170)
-    ctx.lineTo(210,200)
-    ctx.moveTo(130,250)
-    ctx.lineTo(130,280)
-    ctx.moveTo(170,250)
-    ctx.lineTo(170,280)
-    ctx.moveTo(210,250)
-    ctx.lineTo(210,280)
-    ctx.moveTo(130,170)
+    ctx.moveTo(198,100)
+    ctx.lineTo(200,101)
+    ctx.lineTo(300,300)
+    ctx.lineTo(102,300)
+    ctx.lineTo(299,99)
+    ctx.lineTo(400,298)
+    ctx.lineTo(101,100)
+    ctx.lineTo(98,300)
+    ctx.lineTo(399,99)
+    ctx.lineTo(301,297)
+    ctx.lineTo(401,300)
+    ctx.lineTo(397,100)
+    ctx.lineTo(98,99)
+    ctx.lineTo(199,295)
+    ctx.lineTo(200,100)
     ctx.stroke()
+}
 
-  }
 
-  </script>
+</script>
  </head>
  <body onload="init();">
-   <h1>drawMabel interactive javascript canvas for 11/13</h1>
+   <h1>drawTim interactive javascript canvas for 11/13</h1>
    <br>
 
    <button style="background:red; color:white"
            onclick="drawBackground()">Clear</button>
-   <button onclick="drawS()">draw S</button>
 
    <canvas style="float:left;margin-right:30px" id="canvas" width="500" height="500"></canvas>
    <br>
-
    <div>
-     x <input type="text" id="xTF" value="100"><br>
-     y <input type="text" id="yTF" value="200"><br>
-     r <input type="text" id="rTF" value="10"><br>
-     c <input type="text" id="colorTF" value="#ffaa55"><br>
-     <button onclick="drawOneCircle()">draw a circle</button>
-     <br>
-
-     n <input type="text" id="nTF" value="10"><br>
-     <button onclick="drawCircles()">draw circles</button>
+     <button onclick="drawDe()">draw :)</button>
    </div>
 
    <script src="drawgrid.js"></script>

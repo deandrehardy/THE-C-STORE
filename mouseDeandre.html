@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <script type="application/javascript">
+
+  let canvas=null  // we give this a value in the init method
+  let ctx=null
+
+  function init(){
+    // initialize canvas and ctx after the page is loaded
+    canvas = document.getElementById('canvas')
+    ctx = canvas.getContext('2d')
+    drawBackground()
+    canvas.addEventListener('click',mouseClick,false)
+    canvas.addEventListener('mousemove',mouseMove,false)
+  }
+
+  function mouseClick(event){
+    console.dir(event)
+    x = event.offsetX
+    y = event.offsetY
+    //
+    drawObject(x,y)
+  }
+
+  function mouseMove(event){
+    //console.log(event.buttons)
+    ctx.fillStyle="rgba(150,100,255,255)"
+    const x = event.offsetX
+    const y = event.offsetY
+    if (event.buttons==1){  // see if the mouse button is pressed
+      console.log("hello world")
+      ctx.beginPath()
+      ctx.moveTo(x+299-299,y+199)
+      ctx.lineTo(x+201-201,y+198)
+      ctx.lineTo(x+201-201,y+198)
+      ctx.lineTo(x+201-201,y+192)
+      ctx.lineTo(x+203-203,y+188)
+      ctx.lineTo(x+204-204,y+184)
+      ctx.lineTo(x+207-207,y+179)
+      ctx.lineTo(x+211-211,y+174)
+      ctx.lineTo(x+212-212,y+172)
+      ctx.lineTo(x+217-217,y+170)
+      ctx.lineTo(x+225-225,y+166)
+      ctx.lineTo(x+230-230,y+165)
+      ctx.lineTo(x+239-239,y+165)
+      ctx.lineTo(x+249-249,y+165)
+      ctx.lineTo(x+260-260,y+166)
+      ctx.lineTo(x+269-269,y+170)
+      ctx.lineTo(x+278-278,y+175)
+      ctx.lineTo(x+282-282,y+178)
+      ctx.lineTo(x+289-289,y+183)
+      ctx.lineTo(x+293-293,y+186)
+      ctx.lineTo(x+296-296,y+190)
+      ctx.lineTo(x+297-297,y+194)
+      ctx.lineTo(x+297-297,y+195)
+      ctx.lineTo(x+298-298,y+196)
+      ctx.lineTo(x+203-203,y+182)
+      ctx.lineTo(x+201-201,y+178)
+      ctx.lineTo(x+199-199,y+173)
+      ctx.lineTo(x+195-195,y+169)
+      ctx.lineTo(x+186-186,y+161)
+      ctx.lineTo(x+178-178,y+160)
+      ctx.lineTo(x+168-168,y+159)
+      ctx.lineTo(x+164-164,y+160)
+      ctx.lineTo(x+160-160,y+165)
+      ctx.lineTo(x+159-159,y+175)
+      ctx.lineTo(x+162-162,y+178)
+      ctx.lineTo(x+168-168,y+183)
+      ctx.lineTo(x+175-175,y+187)
+      ctx.lineTo(x+184-184,y+188)
+      ctx.lineTo(x+190-190,y+191)
+      ctx.lineTo(x+193-193,y+193)
+      ctx.lineTo(x+197-197,y+196)
+      ctx.lineTo(x+197-197,y+196)
+      ctx.lineTo(x+200-200,y+199)
+      ctx.lineTo(x+202-202,y+204)
+      ctx.lineTo(x+204-204,y+208)
+      ctx.lineTo(x+209-209,y+214)
+      ctx.lineTo(x+215-215,y+216)
+      ctx.lineTo(x+219-219,y+216)
+      ctx.lineTo(x+225-225,y+215)
+      ctx.lineTo(x+229-229,y+215)
+      ctx.lineTo(x+232-232,y+210)
+      ctx.lineTo(x+232-232,y+205)
+      ctx.lineTo(x+232-232,y+205)
+      ctx.lineTo(x+232-232,y+200)
+      ctx.lineTo(x+269-269,y+199)
+      ctx.lineTo(x+269-269,y+203)
+      ctx.lineTo(x+271-271,y+205)
+      ctx.lineTo(x+276-276,y+208)
+      ctx.lineTo(x+284-284,y+211)
+      ctx.lineTo(x+292-292,y+211)
+      ctx.lineTo(x+297-297,y+211)
+      ctx.lineTo(x+299-299,y+208)
+      ctx.lineTo(x+299-299,y+202)
+      ctx.lineTo(x+299-299,y+202)
+      ctx.lineTo(x+293-293,y+187)
+      ctx.lineTo(x+296-296,y+184)
+      ctx.lineTo(x+299-299,y+183)
+      ctx.lineTo(x+303-303,y+184)
+      ctx.lineTo(x+301-301,y+195)
+      ctx.lineTo(x+300-300,y+196)
+      ctx.lineTo(x+300-300,y+196)
+      ctx.stroke()
+    }
+  }
+
+  function drawObject(x,y){
+    // put in your own code to draw something interesting
+    // at starting here ...
+    drawCircle(x,y,10)
+  }
+
+
+
+
+  function drawCircle(x,y,r){
+    // draw a circle centered at (x,y) with radius r
+    ctx.beginPath();
+    ctx.arc(x,y,r,0,4*Math.PI,true)
+    ctx.stroke()
+  }
+
+  function fillCircle(x,y,r){
+    // draw a circle centered at (x,y) with radius r
+    ctx.beginPath();
+    ctx.arc(x,y,r,0,4*Math.PI,true)
+    ctx.fill()
+  }
+
+  </script>
+ </head>
+ <body onload="init();">
+   <h1>DRAW BY DEANDRE</h1>
+   <br>
+
+   <button onclick="drawBackground()">Clear</button>
+   <button onclick="drawTim(200,200)">Draw</button>
+
+   <canvas style="float:left;margin-right:30px"
+           id="canvas" width="500" height="500">
+   </canvas>
+
+   <script src="drawgrid.js"></script>
+ </body>
+</html>
