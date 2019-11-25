@@ -31,7 +31,7 @@
     const y = event.offsetY
     if (event.buttons==1){  // see if the mouse button is pressed
       ctx.beginPath()
-      ctx.lineTo(x+299-299,-199+y+199)
+      ctx.moveTo(x+299-299,-199+y+199)
       ctx.lineTo(x+201-201,-198+y+198)
       ctx.lineTo(x+201-201,-198+y+198)
       ctx.lineTo(x+201-201,-192+y+192)
@@ -102,6 +102,7 @@
       ctx.lineTo(x+301-301,-195+y+195)
       ctx.lineTo(x+300-300,-196+y+196)
       ctx.lineTo(x+300-300,-196+y+196)
+      ctx.stroke()
     }
   }
 
