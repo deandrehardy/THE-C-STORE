@@ -27,7 +27,7 @@
   function mouseMove(event){
     //console.log(event.buttons)
     ctx.fillStyle="rgba(1,50,100,0.3)"
-    ctx.strokeStyle="rgba(100,200,0,0.4)"
+    ctx.strokeStyle="rgba(200,500,0,0.4)"
     const x = event.offsetX
     const y = event.offsetY
     if (event.buttons==1){  // see if the mouse button is pressed
@@ -60,10 +60,11 @@
       ctx.lineTo(x+170-130, -170+y+320)
       ctx.lineTo(x+210-130, -170+y+280)
       ctx.stroke()
-      
-      drawCircle(x,y,100)
-    }
 
+
+    }
+drawCircle(x,y,150)
+ctx.strokestyle="rgba(1,50,500,0.3)"
   }
 
   function drawObject(x,y){
