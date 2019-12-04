@@ -10,14 +10,13 @@
   <script type="application/javascript">
 
 
-  function calcBMI(){
-    w = weight.value  // read weight from element with id="weight"
-    h = height.value  // read height from element with id="height"
-    bmi = 703*w/(h*h)  // calculate the Body Mass Index
-    BMI.innerHTML =    // write into label element with id "BMI"
-        "You're BMI is "
-        +bmi.toFixed(1)  // round BMI to 1 decimal place
-
+  function calc(){
+    m = miles.value  // read weight from element with id="weight"
+    g = gallons.value  // read height from element with id="height"
+    mpg = m/g  // calculate the Body Mass Index
+    MPG.innerHTML =    // write into label element with id "BMI"
+        "You're MPG is "
+        +mpg.toFixed(1)
 
   }
   let canvas=null  // we give this a value in the init method
@@ -112,13 +111,13 @@ canvas.addEventListener('mousemove',mouseMove,false)
        Enter your weight in pounds <input type="number" id="weight"><br>
        Enter your height in inches <input type="number" id="height"><br>
        <button class="btn btn-lg btn-danger"
-               onClick="calcBMI()">
-           Calculate BMI
+               onClick="calcMPG()">
+           Calculate MPG
        </button>
        <br>
        <hr>
        <h2>Results</h2>
-       <label id="BMI">????</label>
+       <label id="MPG">????</label>
 
      </div>
      <div class="col">
