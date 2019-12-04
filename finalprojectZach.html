@@ -10,14 +10,13 @@
   <script type="application/javascript">
 
 
-  function calcBMI(){
-    w = weight.value  // read weight from element with id="weight"
-    h = height.value  // read height from element with id="height"
-    bmi = 703*w/(h*h)  // calculate the Body Mass Index
-    BMI.innerHTML =    // write into label element with id "BMI"
-        "You're BMI is "
-        +bmi.toFixed(1)  // round BMI to 1 decimal place
-
+  function calc(){
+    d = distance.value  // read weight from element with id="weight"
+    g = gallons.value  // read height from element with id="height"
+    mpg = d/g  // calculate the Body Mass Index
+    MPG.innerHTML =    // write into label element with id "BMI"
+        "You're MPG is "
+        +mpg.toFixed(1)
 
   }
   let canvas=null  // we give this a value in the init method
@@ -99,26 +98,27 @@ canvas.addEventListener('mousemove',mouseMove,false)
  <body onload="init();">
    <div class="container">
      <div class="jumbotron">
-       <h1>Tim's Final Project .... </h1>
-       <p>This is a minimal demo </p>
+       <h1>Zach's Final Project .... </h1>
+       <p>Get ready for the experience of a lifetime.</p>
      </div>
 
    <div class="row">
      <div class="col">
        <h1>Calculations</h1>
-       Put some textfields, labels, and buttons here ..
-       <h1>Body Mass Index</h1>
-       What is your full name? <input type="text" id="fullName"><br>
-       Enter your weight in pounds <input type="number" id="weight"><br>
-       Enter your height in inches <input type="number" id="height"><br>
+       username: <input type="text" id="username"><br>
+       password: <input type="text" id="password"><br>
+       <h1>Miles Per Gallon in your car!</h1>
+       What is your car's make and model? <input type="text" id="makeModel"><br>
+       Enter the distance you drove in your past trip in miles. <input type="number" id="d"><br>
+       Enter the amount of gas you used in your past trip in gallons. <input type="number" id="g"><br>
        <button class="btn btn-lg btn-danger"
-               onClick="calcBMI()">
-           Calculate BMI
+               onClick="calcMPG()">
+           Calculate MPG
        </button>
        <br>
        <hr>
        <h2>Results</h2>
-       <label id="BMI">????</label>
+       <label id="MPG"></label>
 
      </div>
      <div class="col">
