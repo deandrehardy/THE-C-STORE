@@ -21,23 +21,24 @@
     x = event.offsetX
     y = event.offsetY
     //
-    drawObject(100,100)
+    drawObject(x,y)
   }
 
   function mouseMove(event){
     //console.log(event.buttons)
-    ctx.fillStyle="rgba(0,0,255,0.3)"
+    ctx.fillStyle="rgba(200,220,255,0.3)"
     const x = event.offsetX
     const y = event.offsetY
+    const r = 50
     if (event.buttons==1){  // see if the mouse button is pressed
-      ctx.fillRect(100,100,10,30)
+      ctx.fillRect(x,y,r,30)
+      drawCircle(x,y,50)
+
     }
   }
 
   function drawObject(x,y){
-    // put in your own code to draw something interesting
-    // at starting here ...
-    drawCircle(100,100,10)
+    drawCircle(x,y,10)
   }
 
 
@@ -46,7 +47,7 @@
   function drawCircle(x,y,r){
     // draw a circle centered at (x,y) with radius r
     ctx.beginPath();
-    ctx.arc(50,100,500,0,2*Math.PI,true)
+    ctx.arc(x,y,r,0,2*Math.PI,true)
     ctx.stroke()
   }
 
@@ -60,14 +61,14 @@
   </script>
  </head>
  <body onload="init();">
-   <h1>MouseDemo interactive javascript canvas for 11/20</h1>
+   <h1>Z MouseDemo interactive javascript canvas for 11/20</h1>
    <br>
 
    <button onclick="drawBackground()">Clear</button>
    <button onclick="drawZach(200,200)">Draw</button>
 
    <canvas style="float:left;margin-right:30px"
-           id="canvas" width="500" height="500">
+           id="canvas" width="1500" height="1500">
    </canvas>
 
    <script src="drawgrid.js"></script>
