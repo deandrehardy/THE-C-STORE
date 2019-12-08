@@ -10,7 +10,7 @@
   <script type="application/javascript">
 
 
-  function calc(){
+  function calcMPG(){
     d = distance.value  // read weight from element with id="weight"
     g = gallons.value  // read height from element with id="height"
     mpg = d/g  // calculate the Body Mass Index
@@ -109,10 +109,10 @@ canvas.addEventListener('mousemove',mouseMove,false)
        password: <input type="text" id="password"><br>
        <h1>Miles Per Gallon in your car!</h1>
        What is your car's make and model? <input type="text" id="makeModel"><br>
-       Enter the distance you drove in your past trip in miles. <input type="number" id="d"><br>
-       Enter the amount of gas you used in your past trip in gallons. <input type="number" id="g"><br>
-       <button class="btn btn-lg btn-danger"
-               onClick="calcMPG()">
+       Enter the distance you drove in your past trip in miles. <input type="number" id="distance"><br>
+       Enter the amount of gas you used in your past trip in gallons. <input type="number" id="gallons"><br>
+       <button class="btn btn-sm btn-danger"
+               onClick="calcMPG()"
            Calculate MPG
        </button>
        <br>
