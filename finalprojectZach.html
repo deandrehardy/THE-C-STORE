@@ -15,9 +15,8 @@
     g = gallons.value  // read height from element with id="height"
     mpg = d/g  // calculate the Body Mass Index
     MPG.innerHTML =    // write into label element with id "BMI"
-        "You're MPG is "
+        "Your MPG is "
         +mpg.toFixed(1)
-
   }
   let canvas=null  // we give this a value in the init method
   let ctx=null
@@ -28,7 +27,7 @@
     ctx = canvas.getContext('2d')
     drawBackground()
     canvas.addEventListener('click',mouseClick,false)
-canvas.addEventListener('mousemove',mouseMove,false)
+    canvas.addEventListener('mousemove',mouseMove,false)
   }
 
   function mouseClick(event){
@@ -77,25 +76,29 @@ canvas.addEventListener('mousemove',mouseMove,false)
     ctx.arc(x,y,r,0,2*Math.PI,true)
     ctx.fill()
   }
-  function drawZach(){
-    ctx.strokeStyle="blue"
-    ctx.lineWidth=5
-    ctx.beginPath()
-    ctx.moveTo(198,100)
-    ctx.lineTo(300,100)
-    ctx.lineTo(362,150)
-    ctx.lineTo(364,213)
-    ctx.lineTo(308,263)
-    ctx.lineTo(199,263)
-    ctx.lineTo(136,211)
-    ctx.lineTo(142,141)
-    ctx.lineTo(195,102)
-    ctx.stroke()
-  }
+  function drawZach() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+  var img = new Image();
+  img.onload = function() {
+    for (var i = 1; i < 5; i++) {
+      for (var j = 1; j < 4; j++) {
+        ctx.drawImage(img, j * 75, i * 50, 75, 50);
+      }
+    }
+  };
+  img.src = 'https://i1.sndcdn.com/avatars-000306140717-iy8r2u-t500x500.jpg';
+}
+  function drawYou() {
+    var ctx = document.getElementById('canvas').getContext('2d');
+    var img = new Image();
+    img.src ='https://bloximages.chicago2.vip.townnews.com/mtstandard.com/content/tncms/assets/v3/editorial/4/0d/40dff3e6-0934-5c73-9fd2-90dab28e69ac/5d6595246cb17.image.jpg';
+    ctx.drawImage(img, 50, 50);
+}
+
 
   </script>
  </head>
- <body onload="init();">
+ <body onload="init()">
    <div class="container">
      <div class="jumbotron">
        <h1>Zach's Final Project .... </h1>
@@ -105,14 +108,19 @@ canvas.addEventListener('mousemove',mouseMove,false)
    <div class="row">
      <div class="col">
        <h1>Calculations</h1>
+       <p>
        username: <input type="text" id="username"><br>
        password: <input type="text" id="password"><br>
+       <button onClick="signin()"> Log in </button>
+       <br>
+       <h1> Leave a review </h1>
+       <textarea rows="5" cols="100"> Tell me what you're thinking...</textarea>
        <h1>Miles Per Gallon in your car!</h1>
        What is your car's make and model? <input type="text" id="makeModel"><br>
        Enter the distance you drove in your past trip in miles. <input type="number" id="distance"><br>
        Enter the amount of gas you used in your past trip in gallons. <input type="number" id="gallons"><br>
        <button class="btn btn-sm btn-danger"
-               onClick="calcMPG()"
+               onClick="calcMPG(1)"
            Calculate MPG
        </button>
        <br>
@@ -133,7 +141,9 @@ canvas.addEventListener('mousemove',mouseMove,false)
                onclick="drawBackground()">Clear</button>
 
        <br> <button onclick="drawZach()">Draw Zach</button>
-       ....
+       <br> <button onclick="drawYou()">Draw Yourself</button>
+
+
      </div>
 
 
