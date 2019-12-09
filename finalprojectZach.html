@@ -34,16 +34,20 @@
     console.dir(event)
     const x = event.offsetX
     const y = event.offsetY
-    //draw something here ...
-    ctx.fillRect(x,y,20,50)
+    var ctx = document.getElementById('canvas').getContext('2d');
+    var img = new Image();
+    img.src = 'http://www.brandeis.edu/now/2012/april/images/hickey330V.jpg'
+    ctx.drawImage(img,x,y);
   }
 
   function mouseMove(event){
+    ctx.fillStyle="rgba(200,220,255,0.3)"
     const x = event.offsetX
     const y = event.offsetY
-    // put your own code in here!
+    const r = 50
     if (event.buttons==1){ // only draw if they are pushing the button!
         ctx.fillRect(x,y,10,20)
+        drawCircle(x,y,50)
     }
 }
 
@@ -91,8 +95,8 @@
   function drawYou() {
     var ctx = document.getElementById('canvas').getContext('2d');
     var img = new Image();
-    img.src ='https://bloximages.chicago2.vip.townnews.com/mtstandard.com/content/tncms/assets/v3/editorial/4/0d/40dff3e6-0934-5c73-9fd2-90dab28e69ac/5d6595246cb17.image.jpg';
-    ctx.drawImage(img, 50, 50);
+    img.src ='https://www.cs.brandeis.edu/~tim/hickey-apr08.gif';
+    ctx.drawImage(img, 5, 5);
 }
 
 
