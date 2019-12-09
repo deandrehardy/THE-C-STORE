@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title> Volume Of A Rectangular Prism </title>
+</head>
+<body>
+<h1>:)</h1>
+Width: <input type="text" id="width"><br>
+Length: <input type="text" id="length"><br>
+Height: <input type="text" id="height"><br>
+<button onClick="calcVolume()">
+  Calculate the volume of a cube
+</button>
+<br>
+<label id="resultLabel">
+  The volume of your cube is ???
+</label>
+
+<script>
+function calcVolume(){
+  let w = width.value
+  let l = lenght.value
+  let h = height.value
+  let volume = w*l*h
+  resultLabel.innerHTML =
+    "The volume of your cube is "+volume
+}
+</script>
+</body>
+</html>
