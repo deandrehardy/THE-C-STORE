@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script type="application/javascript">
+
+
+  function calcTax(){
+    c = parseFloat(costs.value)
+    t = parseFloat(tax.value)
+    Cost = c*t+c
+    totalCost.innerHTML =
+        "It costs $"
+        + Cost.toFixed(2)
+    }
+
+
+  let canvas=null  // we give this a value in the init method
+  let ctx=null
+
+  function init(){
+    // initialize canvas and ctx after the page is loaded
+    canvas = document.getElementById('canvas')
+    ctx = canvas.getContext('2d')
+    drawBackground()
+    canvas.addEventListener('click',mouseClick,false)
+    canvas.addEventListener('mousemove',mouseMove,false)
+  }
+  var img = new Image()
+img.src = "emoji.jpg"
+  function mouseClick(event){
+    console.dir(event)
+    x = event.offsetX
+    y = event.offsetY
+    ctx.drawImage(img,x,y)
+  }
+
+  function mouseMove(event){
+    //console.log(event.buttons)
+    ctx.fillStyle="rgba(69,200,150,0.7)"
+    const x = event.offsetX
+    const y = event.offsetY
+    if (event.buttons==1){  // see if the mouse button is pressed
+      ctx.fillRect(x,y,20,30)
+    }
+  }
+
+  function drawObject(x,y){
+ctx.lineWidth=5
+ctx.strokeStyle="red"
+ctx.beginPath()
+ctx.moveTo(130,170)
+ctx.lineTo(130,200)
+ctx.moveTo(170,170)
+ctx.lineTo(170,200)
+ctx.moveTo(210,170)
+ctx.lineTo(210,200)
+ctx.moveTo(130,250)
+ctx.lineTo(130,280)
+ctx.moveTo(170,250)
+ctx.lineTo(170,280)
+ctx.moveTo(210,250)
+ctx.lineTo(210,280)
+ctx.moveTo(130,170)
+ctx.stroke()
+  }
+
+  function drawCircle(x,y,r){
+    // draw a circle centered at (x,y) with radius r
+    ctx.beginPath();
+    ctx.moveTo(50,50)
+    ctx.stroke()
+  }
+  function fillCircle(x,y,r){
+    // draw a circle centered at (x,y) with radius r
+    ctx.beginPath();
+    ctx.arc(x,y,r,0,2*Math.PI,true)
+    ctx.fill()
+  }
+  function drawDesi(){
+    ctx.lineWidth=5
+    ctx.strokeStyle="red"
+    ctx.beginPath()
+    ctx.moveTo(130,170)
+    ctx.lineTo(130,200)
+    ctx.moveTo(170,170)
+    ctx.lineTo(170,200)
+    ctx.moveTo(210,170)
+    ctx.lineTo(210,200)
+    ctx.moveTo(130,250)
+    ctx.lineTo(130,280)
+    ctx.moveTo(170,250)
+    ctx.lineTo(170,280)
+    ctx.moveTo(210,250)
+    ctx.lineTo(210,280)
+    ctx.moveTo(130,170)
+    ctx.stroke()
+  }
+
+
+  </script>
+ </head>
+ <body onload="init();">
+   <div class="container">
+     <div class="jumbotron">
+       <h1>Desi's Final Project .... </h1>
+       <p>AHHHHHHHHHH </p>
+     </div>
+
+   <div class="row">
+     <div class="col">
+       <h1>How are you feeling?</h1>
+       <textarea rows="8" cols="80">???</textarea>
+       <h1>Calculations</h1>
+       <h1>How much Tax?</h1>
+       how much does it cost <input type="number" id="costs"><br>
+       Tax % <input type="number" id="tax"><br>
+       <button class="btn btn-lg btn-danger"
+               onClick="calcTax()">
+           Calculate Tax
+       </button>
+       <br>
+       <hr>
+       <h2>Results</h2>
+       <label id="totalCost">...</label>
+
+     </div>
+
+     <div class="col">
+       <h1>Canvas</h1>
+       <canvas style="float:left;margin-right:30px"
+       id="canvas" width="500" height="500"></canvas>
+
+     </div>
+     <div class="col">
+       <h1>Buttons To Draw on Canvas!</h1>
+       <button style="background:red; color:white"
+               onclick="drawBackground()">Clear</button>
+       <br> <button onclick="drawObject()">Draw Something</button>
+
+
+     </div>
+
+
+
+ <!-- Optional JavaScript -->
+ <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+   <script src="drawgrid.js"></script>
+  </div>
+ </body>
+</html>

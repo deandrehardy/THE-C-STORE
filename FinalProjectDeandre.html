@@ -11,12 +11,12 @@
 
 
   function calcCHECK(){
-    w = wage.value  // read weight from element with id="weight"
-    h = hours.value  // read height from element with id="height"
-    check = w*h // calculate the Body Mass Index
+    h = hours.value  // read weight from element with id="weight"
+    r = rate.value  // read height from element with id="height"
+    check = r*h   // calculate the Body Mass Index
     CHECK.innerHTML =    // write into label element with id "BMI"
-        "Your paycheck will be"
-        +CHECK.toFixed(1)  // round BMI to 1 decimal place
+        "You're paycheck will be "
+        +check.toFixed(1)  // round BMI to 1 decimal place
 
 
   }
@@ -30,41 +30,55 @@
     drawBackground()
     canvas.addEventListener('click',mouseClick,false)
 canvas.addEventListener('mousemove',mouseMove,false)
+  }
 
-function mouseClick(event){
-  console.dir(event)
-  x = event.offsetX
-  y = event.offsetY
-  //
-  drawTurtle(x,y)
+  function mouseClick(event){
+    console.dir(event)
+    x = event.offsetX
+    y = event.offsetY
+    //
+    drawDe(x,y)
+  }
+
+  function mouseMove(event){
+    //console.log(event.buttons)
+    ctx.fillStyle="rgba(150,75,0,0.6)"
+    const x = event.offsetX
+    const y = event.offsetY
+    if (event.buttons==1){  // see if the mouse button is pressed
+    }  ctx.fillCircle(x,y,5,5)
 }
-function mouseMove(event){
-  //console.log(event.buttons)
-  ctx.fillStyle="rgba(150,75,0,0.6)"
-  const x = event.offsetX
-  const y = event.offsetY
-  if (event.buttons==1){  // see if the mouse button is pressed
-  }  ctx.fillRect(x,y,20,30)
-}
-function drawObject(x,y){
-  // put in your own code to draw something interesting
-  // at starting here ...
-  drawCircle(x,y,10)
-}
-function drawCircle(x,y,r){
-  // draw a circle centered at (x,y) with radius r
-  ctx.beginPath();
-  ctx.arc(x,y,r,0,4*Math.PI,true)
-  ctx.stroke()
-}
-function fillCircle(x,y,r){
-  // draw a circle centered at (x,y) with radius r
-  ctx.beginPath();
-  ctx.arc(x,y,r,0,4*Math.PI,true)
-  ctx.fill()
-}
-  function drawTurtle(){
-    console.log('drawTurtle'+`(${x},${y})`)
+
+  function drawCircle(x,y,r){
+    // draw a circle centered at (x,y) with radius r
+    ctx.beginPath();
+    ctx.arc(x,y,r,0,2*Math.PI,true)
+    ctx.stroke()
+  }
+
+  function drawCircles(){
+    let x = parseInt(xTF.value)
+    let y = parseInt(yTF.value)
+    let r = parseInt(rTF.value)
+    let n = parseInt(nTF.value)
+    let color = colorTF.value
+    for (let a = 0; a<n; a++){
+      drawCircle(x+10*a, y-10*a, 10+r*a)
+    }
+  }
+
+
+  function drawOneCircle(){
+    let x = parseInt(xTF.value)
+    let y = parseInt(yTF.value)
+    let r = parseInt(rTF.value)
+    let color = colorTF.value
+    ctx.fillStyle=color
+    ctx.beginPath();
+    ctx.arc(x,y,r,0,2*Math.PI,true)
+    ctx.fill()
+  }
+  function drawDe(){
     ctx.fillStyle="rgba(0,255,0,0.6)"
     ctx.beginPath()
     ctx.moveTo(x+299-299,y+199-200)
@@ -139,50 +153,44 @@ function fillCircle(x,y,r){
     ctx.lineTo(x+300-299,y+196-200)
     ctx.lineTo(x+300-299,y+196-200)
     ctx.fill()
-}
+  }
   </script>
  </head>
+ <body onload="init();">
    <div class="container">
      <div class="jumbotron">
-       <h1>DeAndre's Final Project </h1>
-       <p> 🐢 </p>
+       <h1>De'Andre's Final Project </h1>
+       <p> :) </p>
      </div>
 
-   <div class="row">
-     <div class="col">
-       <h1>Calculations</h1>
-       <form>
-    <fieldset>
-      <legend>Login</legend>
-      <p>
-        <label>Username</label>
-        <input type = "text"
-               id = "myText"
-               value = "" >
-      </p>
-      <p>
-        <label>Password</label>
-        <input  type = "password"
-                id = "myPwd"
-                value = "secret" />
-      </p>
-      <button onclick="signin"> Sign In :)</button>
+  <div class="row">
+    <div class="col">
+      <h1>Calculations</h1>
+      <form>
+   <fieldset>
+     <legend>Login</legend>
+     <p>
+       <label>Username</label>
+       <input type = "text"
+              id = "myText"
+              value = "" >
+     </p>
+     <p>
+       <label>Password</label>
+       <input  type = "password"
+               id = "myPwd"
+               value = "secret" />
+     </p>
+     <button onclick="signin"> Sign In :)</button>
 
-      <p>
-        <h2>Write something nice ! </h2>
-        <textarea id = "myTextArea"
-                rows = "3"
-                cols = "80">Your text here</textarea>
-      </p>
-    </fieldset>
-  </form>
-  <button class="btn btn-lg btn-primary"
-          onClick=":)"> :) </button>
-
-       <h1>Biweekly Paycheck Calculator </h1>
-       Full Name : <input type="text" id="fullName"><br>
-       Enter your pay rate in $ : <input type="number" id="weight"><br>
-       Enter the amount of hours worked in 2 weeks   <input type="number" id="height"><br>
+   </fieldset>
+ </form>
+ <button class="btn btn-lg btn-primary"
+         onClick=":)"> :) </button>
+       <h1>Biweekly Paycheck Calculator</h1>
+       How was your day? <input type="text" id="fullName"><br>
+       Hours worked in 2 weeks : <input type="number" id="hours"><br>
+       Pay Rate in $ :  <input type="number" id="rate"><br>
        <button class="btn btn-lg btn-danger"
                onClick="calcCHECK()">
            Calculate Paycheck
@@ -201,10 +209,10 @@ function fillCircle(x,y,r){
      </div>
      <div class="col">
        <h1>Buttons etc to draw on Canvas</h1>
-       <button style="background:red; color:white"
+       <button style="background:purple; color:white"
                onclick="drawBackground()">Clear</button>
 
-       <br> <button onclick="drawTurtle()">Draw Deandre</button>
+       <br> <button onclick="drawDe()">Draw De</button>
        ....
      </div>
 
@@ -217,6 +225,55 @@ function fillCircle(x,y,r){
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
    <script src="drawgrid.js"></script>
+   <title>DEANDRE'S ABOUT</title>
+   </head>
+   <body class="container"
+   <ul>
+ <h1> De'Andre's Bio </h1>
+ <div class= "row">
+
+     <div class="col">
+       <img src="https://images.squarespace-cdn.com/content/v1/5cdcd8abab1a622b5480a543/1571250705159-6C5HH72IGG2Y6DN1TD76/ke17ZwdGBToddI8pDm48kMXRibDYMhUiookWqwUxEZ97gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0luUmcNM2NMBIHLdYyXL-Jww_XBra4mrrAHD6FMA3bNKOBm5vyMDUBjVQdcIrt03OQ/_MG_5322.jpg?format=750w" width=100% >
+     </div>
+
+     <div class= "col">
+     Welcome to my website! </br>
+     I am originally from Lynn,MA and I have lived there most of my life. I am and only child and have a pet bearded dragon named Jeff. I love photography but i plan to major in business. I also have a clothing line called VLUSH that sells different kinds of streetwear.
+     <br>
+   </div>
+
+   <ul>
+     <li> My favorite color purple </li>
+     <li> Tacos are hands down the best food ever </li>
+     <li> My favorite season is Winter </li>
+   </ul>
+
+   <table class= "table table-bordered table-striped">
+
+
+   <thead>
+     <tr> <th> My nationalities </th> <th> Favotite Foods </th> <th>
+       Places I've Traveled </th> </tr>
+     </thead>
+
+     <tbody>
+         <tr><td> Laotian </td> <td> Pho </td> <td> Michigan </td> </tr>
+         <tr><td> Thai </td> <td> Chicken </td> <td> New York </td> </tr>
+         <tr><td> Haitian </td> <td> Mac & Cheese </td> <td> Illinois </td> </tr>
+</table>
+
+ <img src="https://images.squarespace-cdn.com/content/v1/5cdcd8abab1a622b5480a543/1571251406867-IHB2ZY1NSZZYDYPKRNWU/ke17ZwdGBToddI8pDm48kHem505q6McQd8XRhQc9zkRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpxpEURhgSBEh9ILe0HKIG3CcOCklsxWwam3CdWF6Xw7jwVv5P97BEtB5XaVnmvMtTA/image-asset.jpeg?format=500w" width="200">
+
+ <a href= "https://vlush.shop/"> Check out my website! </a>
+
+
+
+
+   <!-- Optional JavaScript -->
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </div>
  </body>
 </html>
